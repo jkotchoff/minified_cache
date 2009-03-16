@@ -7,6 +7,10 @@ javascript so that you can pass the YSlow test! When you call:
 
 then the resulting generated #{RAILS_ROOT}/public/javascripts/application_cached.js will be
 served minified (assuming config.action_controller.perform_caching = true)
+
+INSTALLATION:
+=============
+git clone git://github.com/cornflakesuperstar/minified_cache.git vendor/plugins/minified_cache 
  
  
 WARNING
