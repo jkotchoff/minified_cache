@@ -1,5 +1,5 @@
-DESCRIPTION:
-============
+DESCRIPTION
+===========
 This monkey patch of ActionView::Helpers::AssetTagHelper uses the jsmin library to minify cached
 javascript so that you can pass the YSlow test! When you call: 
 
@@ -8,10 +8,9 @@ javascript so that you can pass the YSlow test! When you call:
 then the resulting generated #{RAILS_ROOT}/public/javascripts/application_cached.js will be
 served minified (assuming config.action_controller.perform_caching = true)
 
-INSTALLATION:
+INSTALLATION
 =============
-git clone git://github.com/cornflakesuperstar/minified_cache.git vendor/plugins/minified_cache 
- 
+git clone git://github.com/cornflakesuperstar/minified_cache.git vendor/plugins/minified_cache && rm -rf vendor/plugins/minified_cache/.git
  
 WARNING
 =======
@@ -29,7 +28,9 @@ you can expect some kaboom.
 
 check out http://www.jslint.com/ to verify your scripts
 
-
+HOMEPAGE
+========
+http://www.kangarooit.com/minified_cache
 
 
 Copyright (c) 2009 Jason Kotchoff, released under the MIT license
