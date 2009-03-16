@@ -1,13 +1,31 @@
-MinifiedCache
-=============
+DESCRIPTION:
+============
+This monkey patch of ActionView::Helpers::AssetTagHelper uses the jsmin library to minify cached
+javascript so that you can pass the YSlow test! When you call: 
 
-Introduction goes here.
+    <%= javascript_include_tag 'application', 'other_js_source', :cache => 'application_cached' %>
 
-
-Example
+then the resulting generated #{RAILS_ROOT}/public/javascripts/application_cached.js will be
+served minified (assuming config.action_controller.perform_caching = true)
+ 
+ 
+WARNING
 =======
+In order to minify your javascript, it must be formatted with appropriate function closure and 
+braces eg:
 
-Example goes here.
+    if(condition) alert('msg')
+    else alert('othermsg')
+
+is handled gracefully by browsers (thanks to the newline), however when it gets compressed to:
+
+    if(condition) alert('msg')else alert('othermsg')
+
+you can expect some kaboom. 
+
+check out http://www.jslint.com/ to verify your scripts
 
 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
+
+
+Copyright (c) 2009 Jason Kotchoff, released under the MIT license
